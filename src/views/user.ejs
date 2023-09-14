@@ -1,22 +1,27 @@
-
     <%- include("partials/head") %>
 
   <body>
 
     <%- include("partials/navBar") %>
     <div class="container">
+      
       <a href="/createUser" class="btn btn-outline-primary mt-4"
         ><i class="bx bxs-plus-circle bx-lg"></i
       ></a>
+      
       <a href="/" class="btn btn-outline-success mt-4"
         ><i class="bx bxs-home-alt-2 bx-lg"></i
       ></a>
+      
+      
+
+      
       <table
-        class="table table-danger table-bordered table-striped text-center mt-4"
+        class="table table-info table-bordered table-striped text-center mt-4"
       >
         <thead>
           <tr>
-            <th scope="col">N°</th>
+            <th scope="col" >N°</th>
             <th scope="col">Nombre de Usuario</th>
             <th scope="col">Nombre y Apellido</th>
             <th scope="col">Email</th>
@@ -28,23 +33,32 @@
         <tbody>
           <% results.forEach((users)=>{ %>
           <tr>
-            <td><%= users.id %></td>
-            <td><%= users.username %></td>
-            <td><%= users.nombre %> <%= users.apellido %></td>
-            <td><%= users.email %></td>
-            <td><%= users.role %></td>
-            <td><%= users.image %></td>
+            <td class="fs-6 align-middle"><%= users.id %></td>
+            <td class="fs-6 align-middle"><%= users.username %></td>
+            <td class="fs-6 align-middle"><%= users.nombre %> <%= users.apellido %></td>
+            <td class="fs-6 align-middle"><%= users.email %></td>
+            <td class="fs-6 align-middle"><%= (users.role===1)? "Administrador":"Usuario" %></td>
+            <td class="fs-6 align-middle">
+              <div class="card" style="width: 4rem;">
+                <img src="<%= (users.image!="")? users.image: "/img/user-solid-24.png" %>" class="card-img-top "  alt="">
+              </div> 
+            </td>
+            
 
-            <td>
-              <a href="/editUser/<%= users.id %>" class="btn btn-success"
+            <td class="fs-6 align-middle">
+              <a href="/editUser/<%= users.id %>" class="btn btn-success" 
                 >EDITAR</a
               >
+
+              
+
               <a href="/deleteUser/<%= users.id %>" class="btn btn-danger"
                 >ELIMINAR</a
               >
             </td>
           </tr>
           <% }) %>
+        
         </tbody>
       </table>
     </div>

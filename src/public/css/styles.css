@@ -13,6 +13,16 @@ h1 {
   display: flex;
 }
 
-.container{
-  /* background-color: aquamarine; */
+
+
+.container-menu {
+  
+  height: 780px;
+  background-color: lightgrey;
+  display: flex;
+  justify-content: center;
+  
+   gap: 20px;  
+  
+
 }

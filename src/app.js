@@ -10,6 +10,7 @@ const { TestConnection, port } = require("./database/db");
 
 const indexRouter = require("./routes/index.routes");
 const userRoutes = require("./routes/users.routes");
+const foroRoutes = require("./routes/foro.routes");
 
 
 
@@ -36,6 +37,7 @@ TestConnection();
 
 app.use(indexRouter);
 app.use(userRoutes);
+app.use(foroRoutes);
 
 app.listen(port, () => {
   console.log(`Servidor funcionando en el puerto ${port}`);

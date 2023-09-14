@@ -1,19 +1,39 @@
 
     
     <%- include("partials/head") %>
- 
+  
+    
 
 
 
   <body>
+
+    <%- include("partials/navBar") %>
+
     <!-- <%- include("partials/navBar") %> -->
-    <h1>Menu de Opciones</h1>
-    <div style="display: flex; justify-content: center">
-      <a href="/user" class="btn btn-outline-success mt-4"
+    
+    <div class="container-menu">
+
+    <div class="usuarios">
+      <a href="/user" class="btn btn-outline-primary mt-4 btn-lg" 
         ><i class="bx bxs-user bx-lg"></i
+          
+      ></a>
+    </div>
+    
+    <div class="foro">
+      <a href="/foro" class="btn btn-outline-secondary mt-4 btn-lg"
+        ><i class="bx bx-chat bx-lg"></i
+         
       ></a>
     </div>
 
+
+  
+    
+  
+  </div>
+    
     <%- include("partials/footer") %>
   </body>
 
