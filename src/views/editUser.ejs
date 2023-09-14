@@ -19,14 +19,15 @@
           <form action="/updateUser" method="post">
             <input id="id" name="id" value="<%= user.id %>" hidden />
             
+            
             <div class="mb-3">
-              <label for="user" class="form-label">Usuario</label>
+              <label for="user" class="form-label">Nombre de Usuario *</label>
               <input
                 type="text"
                 class="form-control"
-                id="firstName"
-                name="firstName"
-                value="<%= user.firstName %>"
+                id="username"
+                name="username"
+                value="<%= user.username %>"
                 placeholder="Nombre del Usuario"
                 tabindex="1"
                 required
@@ -35,6 +36,7 @@
 
             <div class="mb-3">
               <label for="user" class="form-label">Nombre</label>
+              
               <input
                 type="text"
                 class="form-control"
@@ -43,28 +45,26 @@
                 value="<%= user.nombre %>"
                 placeholder="Nombre"
                 tabindex="2"
-                required
+                
               />
             </div>
 
-
-            
             <div class="mb-3">
-              <label for="user" class="form-label">Nombre</label>
+              <label for="user" class="form-label">Apellido</label>
               <input
                 type="text"
                 class="form-control"
-                id="nombre"
-                name="nombre"
-                value="<%= user.nombre %>"
-                placeholder="Nombre"
+                id="apellido"
+                name="apellido"
+                value="<%= user.apellido %>"
+                placeholder="Apellido"
                 tabindex="3"
-                required
+                
               />
             </div>
-            
+
             <div class="mb-3">
-              <label for="user" class="form-label">Email</label>
+              <label for="user" class="form-label">Email *</label>
               <input
                 type="email"
                 class="form-control"
@@ -72,10 +72,51 @@
                 name="email"
                 value="<%= user.email %>"
                 placeholder="Email del usuario"
-                tabindex="3"
+                tabindex="4"
                 required
               />
             </div>
+
+            <div class="mb-3">
+              <label for="user" class="form-label">Rol</label>
+              <select name="role" id="role" class="form-control" tabindex="5">
+                <option value="1">Administrador</option>
+                <option value="2">Usuario</option>
+                
+                value="<%= user.role %>"
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label for="user" class="form-label">Password *</label>
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                name="password"
+                value="<%= user.password %>"
+                placeholder="Password"
+                tabindex="6"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="user" class="form-label">Imagen</label>
+              <input
+                type="text"
+                class="form-control"
+                id="image"
+                name="image"
+                value="<%= user.image %>"
+                placeholder="URL imagén"
+                tabindex="7"
+                required
+              />
+            </div>
+
+
+
             <button type="submit" class="btn btn-primary" tabindex="3">
               Guardar
             </button>

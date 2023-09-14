@@ -21,13 +21,13 @@ controllerUsers.postUser = async (req, res) => {
   const { username, nombre, apellido, email, password, role, image } = req.body;
 
   //validacion para los datos del body
-  if (!username || !email || !password)
+  if (!username || !email || !password) {
+
+  
     return res.status(400).send({
       message: "Por favor ingresar los datos del obligatorios del usuario",
     });
-
-
-
+  }
   //manejamos el error con trycatch
   try {
     const user = {
@@ -57,8 +57,11 @@ controllerUsers.postUser = async (req, res) => {
 //TODO: PUT PAGINA PARA EDITAR USUARIO
 controllerUsers.formEditUser = async (req, res) => {
   const { id } = req.params;
+  
+
   const user = await User.findOne({ where: { id: id } });
   console.log(user);
+  
   res.render("editUser", {
     titleEditUser: "Editar Usuario",
     user: user,
@@ -66,18 +69,24 @@ controllerUsers.formEditUser = async (req, res) => {
 };
 
 controllerUsers.putUser = async (req, res) => {
-  const { username, email, id } = req.body;
+  const { id, username, nombre, apellido, email, password, role, image } = req.body;
   //validación de que no mande el dato del nombre para actualizar
-  if (!username || !email) {
-    return res.status(404).send({
-      message:
-        "Es necesario que el parametro firstName o LastName tenga información para actualizar",
+  if (!username || !email || !password) {
+
+  
+    return res.status(400).send({
+      message: "Por favor ingresar los datos del obligatorios del usuario",
     });
   }
   const updateUser = User.update(
     {
       username: username,
+      nombre: nombre,
+      apellido: apellido,
       email: email,
+      role: role,
+      password: password,
+      image: image
     },
     { where: { id: id } }
   );

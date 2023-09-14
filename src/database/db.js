@@ -8,7 +8,7 @@ const dbuser = process.env.DB_USER;
 const dbpass = process.env.DB_PASSWORD;
 const dbhost = process.env.DB_HOST;
 const dbDialect = process.env.DB_DIALECT;
-const port = process.env.PORT;
+const port = process.env.PORT || 5000;
 
 const sequelize = new Sequelize(dbname, dbuser, dbpass, {
   host: dbhost,
