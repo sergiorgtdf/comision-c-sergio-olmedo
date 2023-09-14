@@ -1,0 +1,12 @@
+body {
+  background-color: yellow;
+}
+
+.imagenUsuario {
+  background-color: black;
+  display: flex;
+}
+
+.container{
+  background-color: aquamarine;
+}
