@@ -4,7 +4,7 @@ const morgan = require("morgan");
 const path = require("path");
 const cors = require("cors");
 const ejs = require("ejs");
-// const helmet = require("helmet");
+const helmet = require("helmet");
 
 const app = express();
 const { TestConnection, port } = require("./database/db");
@@ -21,7 +21,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(morgan("tiny"));
 app.use(cors());
-// app.use(helmet());
+ app.use(helmet());
 
 
 //motor de vistas de ejs
