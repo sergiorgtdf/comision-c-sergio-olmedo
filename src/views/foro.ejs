@@ -1,68 +1,73 @@
-<%- include("partials/head") %>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
 
-<body>
+    <%- include("partials/head") %>
+  </head>
+  <body>
     <%- include("partials/navBar") %>
 
     <div class="container">
-      
-      <a href="/createForo" class="btn btn-outline-primary mt-4"
-        ><i class="bx bxs-plus-circle bx-lg"></i
-      ></a>
-      
-      <a href="/" class="btn btn-outline-success mt-4"
-        ><i class="bx bxs-home-alt-2 bx-lg"></i
-      ></a>
-      
-      
+      <!-- BOTONES NUEVO - INICIO -->
 
+      <a href="/createForo" class="btn btn-outline-primary mt-4">
+        <i class="bx bx-plus bx-lg"></i>
+      </a>
+
+      <a href="/" class="btn btn-outline-success mt-4">
+        <i class="bx bx-home-alt-2 bx-lg"></i>
+      </a>
+
+      <div class="titulo">Listado de <%= title %></div>
       
-      <table
-        class="table table-info table-bordered table-striped text-center mt-4"
-      >
+      <table id="foro" class="table table-striped" style="width: 100%">
+        <!-- CABECERAS -->
         <thead>
           <tr>
-            <th scope="col" >N°</th>
+            <th scope="col">N°</th>
             <th scope="col">Titulo</th>
             <th scope="col">Descripcion</th>
             <th scope="col">Imagen</th>
             <th scope="col">Visitas</th>
-            
             <th scope="col">Acciones</th>
           </tr>
         </thead>
+
+        <!-- CONTENIDO -->
         <tbody>
           <% results.forEach((foros)=>{ %>
+
           <tr>
-            <td class="fs-6 align-middle"><%= foros.id %></td>
-            <td class="fs-6 align-middle"><%= foros.title %></td>
-            <td class="fs-6 align-middle"><%= foros.description %></td>
-            <td class="fs-6 align-middle"><%= foros.image %></td>
-            
-            <!-- <td class="fs-6 align-middle">
-              <div class="card" style="width: 4rem;">
-                <img src="<%= (foros.image!="")? foros.image : "/img/user-solid-24.png" %>" class="card-img-top "  alt="">
-              </div> 
-            </td> -->
+            <td><%= foros.id %></td>
+            <td><%= foros.title %></td>
+            <td><%= foros.description %></td>
+            <td>
+              <div class="card" style="width: 4rem">
+                <img src="<%=foros.image%>" class="card-img-top" alt="Imagen del foro">
+              </div>
+            </td>
+            <!-- <td><%= foros.image %></td> -->
+            <td><%= foros.visits %></td>
 
-            <td class="fs-6 align-middle"><%= foros.visits %></td>
+            <td>
+              <a href="/editForo/<%= foros.id %>" class="btn btn-success">
+                <i class="bx bx-edit-alt"></i>
+              </a>
 
-            <td class="fs-6 align-middle">
-              <a href="/editForo/<%= foros.id %>" class="btn btn-success" 
-                >EDITAR</a
-              >
-
-              <a href="/deleteForo/<%= foros.id %>" class="btn btn-danger"
-                >ELIMINAR</a
-              >
+              <a href="/deleteForo/<%= foros.id %>" class="btn btn-danger">
+                <i class="bx bx-trash"></i>
+              </a>
             </td>
           </tr>
+
           <% }) %>
-        
         </tbody>
       </table>
     </div>
-    
 
+    <%- include("partials/footer") %>
   </body>
-
-  <%- include("partials/footer") %>
+</html>

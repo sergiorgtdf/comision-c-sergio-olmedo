@@ -1,11 +1,17 @@
-<%- include("partials/head")%>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <%- include("partials/head")%>
+</head>
 <body>
   <%- include("partials/navBar")%>
 
   <div class="container mt-4">
     <div class="card border-secondary">
-      <div class="card-header">Nuevo Foro</div>
+      <div class="card-header"><%= title %></div>
       <div class="card-body">
         <form action="/saveForo" method="post">
           <!-- <form action="" method="post"></form> -->
@@ -17,7 +23,7 @@
               <input
                 type="text"
                 class="form-control"
-                id="title"
+                id="title" 
                 name="title"
                 placeholder="Titulo del Foro"
                 tabindex="1"
@@ -37,6 +43,15 @@
                 tabindex="2"
               />
             </div>
+
+            <!-- <div class="mb-3">
+              <label for="foro" class="form-label">Contenido</label>
+              <textarea 
+              class="form-control" 
+              name="content" 
+              id="mytextarea"
+              ></textarea>
+            </div> -->
 
             <div class="mb-3">
               <label for="foro" class="form-label">Contenido</label>
@@ -69,27 +84,16 @@
             Guardar
           </button>
           <a href="/foro" class="btn btn-secondary" tabindex="6">Cancelar</a>
+
         </form>
       </div>
     </div>
   </div>
 
 
-
-   Include the Quill library
-   <!-- <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script> -->
-
-   <!-- Initialize Quill editor -->
-   <!-- <script>
-     var quill = new Quill("#editor", {
-       theme: "snow",
-     });
-     function jsSave(){
-      window.alert(quill.container.firstChild.innerHTML)
-      
-     };
-   </script> -->
+  <%- include("partials/footer")%>
 
 </body>
+</html>
 
-<%- include("partials/footer")%>
+

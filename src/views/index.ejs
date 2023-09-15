@@ -1,39 +1,41 @@
 
-    
-    <%- include("partials/head") %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <%- include("partials/head") %>
+</head>
+<body>
+  <%- include("partials/navBar") %>
+
+  <!-- <%- include("partials/navBar") %> -->
+
+  <div class="hero">
+
   
-    
-
-
-
-  <body>
-
-    <%- include("partials/navBar") %>
-
-    <!-- <%- include("partials/navBar") %> -->
-    
-    <div class="container-menu">
-
+  <div class="container-menu">
     <div class="usuarios">
-      <a href="/user" class="btn btn-outline-primary mt-4 btn-lg" 
-        ><i class="bx bxs-user bx-lg"></i
-          
-      ></a>
-    </div>
-    
-    <div class="foro">
-      <a href="/foro" class="btn btn-outline-secondary mt-4 btn-lg"
-        ><i class="bx bx-chat bx-lg"></i
-         
-      ></a>
+      <a href="/user" class="btn btn-outline-primary mt-4">
+        <i class="bx bxs-user bx-lg"></i>
+        
+      </a>
     </div>
 
-
-  
-    
-  
+    <div class="foros">
+      <a href="/foro" class="btn btn-outline-secondary mt-4">
+        <i class='bx bx-chat bx-lg'></i>
+        
+      </a>
+    </div>
   </div>
-    
-    <%- include("partials/footer") %>
-  </body>
+
+</div>
+
+  <%- include("partials/footer") %>
+</body>
+
+</html>
 

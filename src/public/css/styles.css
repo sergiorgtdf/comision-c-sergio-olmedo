@@ -1,28 +1,59 @@
+:root{
+  --fondo:  rgb(197, 193, 193);
+ 
+  --fuentePrimaria: 'Roboto Mono', monospace, sans-serif;
+ 
+
+}
+
 body {
-  /* background-color: black; */
+
+  font-family: var(--fuentePrimaria);
 
 }
 
-h1 {
-  color: blue;
-  text-align: center;
+
+
+.container {
+  height: 780px;
+  background-color: ;
 }
-
-.imagenUsuario {
-  background-color: black;
-  display: flex;
-}
-
-
-
-.container-menu {
+.container-menu  {
   
   height: 780px;
-  background-color: lightgrey;
+  
+  
+  background-color: var(--fondo);
   display: flex;
   justify-content: center;
-  
+
    gap: 20px;  
   
+}
+.imagen {
+justify-content: center;
+display: flex;
 
 }
+
+
+
+.imagenUsuario {
+  justify-content: center;
+  display: flex;
+  background-color: var(--fondo);
+}
+
+.titulo {
+  background-color: var(--fondo);
+  height: 80px;
+  /* background-color: rgb(121, 115, 115); */
+  text-align: center;
+  
+  font-size: 40px;
+  border-radius: 7px;
+}
+
+
+
+

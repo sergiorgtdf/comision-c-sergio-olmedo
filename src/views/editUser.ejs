@@ -1,7 +1,13 @@
-    
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%=titleEditUser%></title>
     <%- include("partials/head")%>
- 
+
+  </head>
   <body>
     <%- include("partials/navBar")%>
 
@@ -77,10 +83,12 @@
             <div class="mb-3">
               <label for="user" class="form-label">Rol</label>
               <select name="role" id="role" class="form-control" tabindex="5">
+                
                 <option value="1">Administrador</option>
                 <option value="2">Usuario</option>
                 
                 value="<%= user.role %>"
+
               </select>
             </div>
 
@@ -114,9 +122,12 @@
             
 
 
-            <button type="submit" class="btn btn-primary" tabindex="3">Guardar</button>
-            <a href="/user" class="btn btn-secondary">Cancelar</a>
+            <button type="submit" class="btn btn-primary" tabindex="8">Guardar</button>
+            <a href="/user" class="btn btn-secondary" tabindex="9">Cancelar</a>
           </form>
+        </div>
+        <div class="imagenUsuario">
+          <img src=<%= user.image %> alt="">
         </div>
       </div>
     </div>
@@ -127,3 +138,4 @@
     <%- include("partials/footer")%>
   </body>
 </html>
+

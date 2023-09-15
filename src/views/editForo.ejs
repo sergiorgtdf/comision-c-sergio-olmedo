@@ -1,94 +1,101 @@
-    
-    
-    
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%=title%></title>
     <%- include("partials/head")%>
+  </head>
+  <body>
+    <%- include("partials/navBar")%>
 
-    <body>
-        <%- include("partials/navBar")%>
-    
-        <!--  -->
-    
-        <% if(foros) { %>
-        <div class="container mt-4">
-          <div class="card border-secondary">
-            <div class="card-header">Editar Foro</div>
-            
-            <div class="card-body">
-              <form action="/updateForo" method="post">
-                <input id="id" name="id" value="<%= foros.id %>" hidden />
-                
-                
+    <!--  -->
 
-                <div class="mb-3">
-                  <label for="foro" class="form-label">Titulo *</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="title"
-                    name="title"
-                    placeholder="Titulo del Foro"
-                    value="<%= foros.title %>"
-                    tabindex="1"
-                    required
-                  />
-                </div>
-    
-                <div class="mb-3">
-                  <label for="foro" class="form-label">Descripción</label>
-    
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="description"
-                    name="description"
-                    placeholder="Breve Descripción del tema"
-                    value="<%= foros.description %>"
-                    tabindex="2"
-                  />
-                </div>
-    
-                <div class="mb-3">
-                  <label for="foro" class="form-label">Contenido</label>
-                  <textarea 
-                  class="form-control" 
-                  name="content" 
+    <% if(foros) { %>
+
+    <div class="container mt-4">
+      
+        <div class="card border-secondary">
+          <div class="card-header"><%=title%></div>
+
+          <div class="card-body">
+            <form action="/updateForo" method="post">
+              <input id="id" name="id" value="<%= foros.id %>" hidden />
+
+              <div class="mb-3">
+                <label for="foro" class="form-label">Titulo *</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="title"
+                  name="title"
+                  placeholder="Titulo del Foro"
+                  value="<%= foros.title %>"
+                  tabindex="1"
+                  required
+                />
+              </div>
+
+              <div class="mb-3">
+                <label for="foro" class="form-label">Descripción</label>
+
+                <input
+                  type="text"
+                  class="form-control"
+                  id="description"
+                  name="description"
+                  placeholder="Breve Descripción del tema"
+                  value="<%= foros.description %>"
+                  tabindex="2"
+                />
+              </div>
+
+              <div class="mb-3">
+                <label for="foro" class="form-label">Contenido</label>
+                <textarea
+                  class="form-control"
+                  name="content"
                   id="mytextarea"
-                  
-                  
-                  ><%= foros.content %></textarea>
-                </div>
+                  tabindex="3"
+                >
+<%= foros.content %></textarea
+                >
+              </div>
 
-                    
-                <div class="mb-3">
-                  <label for="foro" class="form-label">Imagen</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="image"
-                    name="image"
-                    placeholder="URL imagén"
-                    tabindex="4"
-                    value="<%= foros.image %>"
-                    required
-                  />
-                </div>
-    
+              <div class="mb-3">
+                <label for="foro" class="form-label">Imagen</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="image"
+                  name="image"
+                  placeholder="URL imagén"
+                  tabindex="4"
+                  value="<%= foros.image %>"
+                  required
+                />
+              </div>
 
-                </div>
-                
-    
-    
-                <button type="submit" class="btn btn-primary" tabindex="3">Guardar</button>
-                <a href="/foro" class="btn btn-secondary">Cancelar</a>
-              </form>
-            </div>
+              <button type="submit" class="btn btn-primary" tabindex="5">
+                Guardar
+              </button>
+              <a href="/foro" class="btn btn-secondary" tabindex="6"
+                >Cancelar</a
+              >
+            </form>
+          </div>
+        
+          <div class="imagen">
+            <img src="<%=foros.image%>" alt="" />
           </div>
         </div>
-        <% } %>
-    
-        <!--  -->
-    
-        <%- include("partials/footer")%>
-      </body>
-    </html>
-    
+        
+      
+      
+      
+
+      <% } %>
+    </div>
+    <%- include("partials/footer")%>
+  </body>
+</html>

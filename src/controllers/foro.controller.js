@@ -4,11 +4,12 @@ const controllerForos = {};
 // GET ALL
 controllerForos.gellAll = async (req, res) => {
     const foros = await Foros.findAll();
-    res.render("foro", {titleForo: "Foros", results: foros});
+    res.render("foro", {title: "Foros", results: foros});
 };
 
+
 controllerForos.formCreate = (req, res) => {
-    res.render("createForo", { titleCreateUser: "Nuevo Foro" });
+    res.render("createForo", { title: "Nuevo Foro" });
   };
 
 
@@ -24,7 +25,8 @@ controllerForos.postForo = async (req, res) => {
       message: "Debe completar Titulo, Descripción y Contenido",
     });
   }
-  //manejamos el error con trycatch
+
+  //Guarda los datos que vienen del body en la const
   try {
     const foro = {
       author:author,
@@ -34,15 +36,16 @@ controllerForos.postForo = async (req, res) => {
       image: image
       
     };
-    console.log(foro);
+    // console.log(foro);
     if (!foro) {
       return res
         .status(409)
         .send({ message: "El contenido se encuentra en la base de datos" });
     } else {
       const newForo = await  Foros.create(foro);
+      
       return res.redirect("/foro");
-      //res.send({ message: "Usuario creado con exito" });
+      
     }
   } catch (error) {
     console.error(error);
@@ -61,7 +64,7 @@ controllerForos.formEditForo = async (req, res) => {
   
   
   res.render("editForo", {
-    titleEditForo: "Editar Foro",
+    title: "Editar Foro",
     foros: foro,
   });
 
@@ -103,5 +106,21 @@ controllerForos.putForo = async (req, res) => {
   
 };
 
+
+controllerForos.deleteForo = (req, res) => {
+  const { id } = req.params;
+  const deleteUser = Foros.destroy({ where: { id: id } });
+  //validacion para saber si ya existe o no en la bd
+  if (deleteUser) {
+    return res.redirect("/foro");
+    // res
+    //   .status(200)
+    //   .send({ message: "Usuario eliminado de la base de datos" });
+  } else {
+    // return res
+    //   .status(400)
+    //   .send({ message: "Usuario no existe en la base de datos" })
+  }
+};
 
 module.exports = { controllerForos };

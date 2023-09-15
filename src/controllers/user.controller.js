@@ -8,14 +8,14 @@ const controllerUsers = {};
 controllerUsers.getAllUsers = async (req, res) => {
   const users = await User.findAll();
 
-  res.render("user", { titleUser: "Usuarios", results: users });
+  res.render("user", { title: "Usuarios", results: users });
 };
 
 
 
 //TODO: POST: PAGINA DE INICIO
 controllerUsers.formCreateUser = (req, res) => {
-  res.render("createUser", { titleCreateUser: "Nuevo Usuario" });
+  res.render("createUser", { title: "Nuevo Usuario" });
 };
 
 

@@ -20,6 +20,6 @@ foroRoutes.get("/editForo/:id", controllerForos.formEditForo);
 foroRoutes.post("/updateForo", controllerForos.putForo);
 
 //ruta DELETE (eliminar)
-// userRoutes.get("/deleteForo/:id", controllerForos.delete);
+ foroRoutes.get("/deleteForo/:id", controllerForos.deleteForo);
 
 module.exports = foroRoutes;

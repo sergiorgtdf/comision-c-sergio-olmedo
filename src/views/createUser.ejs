@@ -1,112 +1,121 @@
-    <%- include("partials/head")%>
 
-  <body>
-    <%- include("partials/navBar")%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <%- include("partials/head")%>
+</head>
 
-    <div class="container mt-4">
-      <div class="card border-secondary">
-        <div class="card-header">Registro Nuevo Usuario</div>
-        <div class="card-body">
-          <form action="/saveUser" method="post">
-            <div class="datos">
-              
-              <div class="mb-3">
-                <label for="user" class="form-label">Nombre de Usuario *</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="username"
-                  name="username"
-                  placeholder="Nombre del Usuario"
-                  tabindex="1"
-                  required
-                />
-              </div>
+<body>
+  <%- include("partials/navBar")%>
 
-              <div class="mb-3">
-                <label for="user" class="form-label">Nombre</label>
-                
-                <input
-                  type="text"
-                  class="form-control"
-                  id="nombre"
-                  name="nombre"
-                  placeholder="Nombre"
-                  tabindex="2"
-                  
-                />
-              </div>
-
-              <div class="mb-3">
-                <label for="user" class="form-label">Apellido</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="apellido"
-                  name="apellido"
-                  placeholder="Apellido"
-                  tabindex="3"
-                  
-                />
-              </div>
-
-              <div class="mb-3">
-                <label for="user" class="form-label">Email *</label>
-                <input
-                  type="email"
-                  class="form-control"
-                  id="email"
-                  name="email"
-                  placeholder="Email del usuario"
-                  tabindex="4"
-                  required
-                />
-              </div>
-
-              <div class="mb-3">
-                <label for="user" class="form-label">Rol</label>
-                <select name="role" id="role" class="form-control" tabindex="5">
-                  <option value="1">Administrador</option>
-                  <option value="2">Usuario</option>
-                </select>
-              </div>
-
-              <div class="mb-3">
-                <label for="user" class="form-label">Password *</label>
-                <input
-                  type="password"
-                  class="form-control"
-                  id="password"
-                  name="password"
-                  placeholder="Password"
-                  tabindex="6"
-                  required
-                />
-              </div>
-
-              <div class="mb-3">
-                <label for="user" class="form-label">Imagen</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="image"
-                  name="image"
-                  placeholder="URL imagén"
-                  tabindex="7"
-                  required
-                />
-              </div>
+  <div class="container mt-4">
+    <div class="card border-secondary">
+      <div class="card-header"><%= title %></div>
+      <div class="card-body">
+        <form action="/saveUser" method="post">
+          <div class="datos">
+            
+            <div class="mb-3">
+              <label for="user" class="form-label">Nombre de Usuario *</label>
+              <input
+                type="text"
+                class="form-control"
+                id="username"
+                name="username"
+                placeholder="Nombre del Usuario"
+                tabindex="1"
+                required
+              />
             </div>
-            <button type="submit" class="btn btn-primary" tabindex="8">
-              Guardar
-            </button>
-            <a href="/user" class="btn btn-secondary" tabindex="9">Cancelar</a>
-          </form>
-        </div>
+
+            <div class="mb-3">
+              <label for="user" class="form-label">Nombre</label>
+              
+              <input
+                type="text"
+                class="form-control"
+                id="nombre"
+                name="nombre"
+                placeholder="Nombre"
+                tabindex="2"
+                
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="user" class="form-label">Apellido</label>
+              <input
+                type="text"
+                class="form-control"
+                id="apellido"
+                name="apellido"
+                placeholder="Apellido"
+                tabindex="3"
+                
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="user" class="form-label">Email *</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                name="email"
+                placeholder="Email del usuario"
+                tabindex="4"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="user" class="form-label">Rol</label>
+              <select name="role" id="role" class="form-control" tabindex="5">
+                <option value="1">Administrador</option>
+                <option value="2">Usuario</option>
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label for="user" class="form-label">Password *</label>
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                name="password"
+                placeholder="Password"
+                tabindex="6"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="user" class="form-label">Imagen</label>
+              <input
+                type="text"
+                class="form-control"
+                id="image"
+                name="image"
+                placeholder="URL imagén"
+                tabindex="7"
+                required
+              />
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary" tabindex="8">
+            Guardar
+          </button>
+          <a href="/user" class="btn btn-secondary" tabindex="9">Cancelar</a>
+        </form>
       </div>
     </div>
-
-    
-  </body>
+  </div>
 
   <%- include("partials/footer")%>
+  
+</body>
+</html>
+
