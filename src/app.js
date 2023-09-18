@@ -41,6 +41,7 @@ app.use(indexRouter);
 app.use(userRoutes);
 app.use(foroRoutes);
 
+
 app.listen(port, () => {
   console.log(`Servidor funcionando en el puerto ${port}`);
 });

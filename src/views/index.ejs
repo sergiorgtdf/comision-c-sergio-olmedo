@@ -1,41 +1,13 @@
+<!-- Head -->
+<%- include("partials/head") %>
 
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= title %></title>
-  <%- include("partials/head") %>
-</head>
 <body>
-  <%- include("partials/navBar") %>
-
-  <!-- <%- include("partials/navBar") %> -->
-
-  <div class="hero">
-
   
-  <div class="container-menu">
-    <div class="usuarios">
-      <a href="/user" class="btn btn-outline-primary mt-4">
-        <i class="bx bxs-user bx-lg"></i>
-        
-      </a>
-    </div>
+  
 
-    <div class="foros">
-      <a href="/foro" class="btn btn-outline-secondary mt-4">
-        <i class='bx bx-chat bx-lg'></i>
-        
-      </a>
-    </div>
-  </div>
+  <header>
+    <%- include("partials/navBar") %>
+    <h1>Argentina Programa</h1>
+  </header>
 
-</div>
-
-  <%- include("partials/footer") %>
-</body>
-
-</html>
-
+</body> 
