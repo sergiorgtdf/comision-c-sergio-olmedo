@@ -1,5 +1,5 @@
 :root{
-  --fondo:  rgb(197, 193, 193);
+  --fondo:  rgb(122, 120, 120);
  
   --fuentePrimaria: 'Roboto Mono', monospace, sans-serif;
  
@@ -12,7 +12,12 @@ body {
 
 }
 
+.card {
+  flex: auto;
+  align-content: center;
+}
 
+.container-menu
 
 .container {
   height: 780px;

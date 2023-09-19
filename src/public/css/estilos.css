@@ -1,0 +1,51 @@
+:root{
+    --blanco:  rgb(255,255,255);
+    --oscuro: rgb(0,0,0);
+    --degradado:  #8ccacd;;
+    --colorNav: rgb(69, 166, 176);
+    --colorNavHover: rgb(131, 195, 202);
+    --fuentePrimaria: 'Roboto Mono', monospace, sans-serif;
+    --colorIcono: rgb(135, 153, 71);
+
+}
+
+body {
+    font-family: Krub, sans-serif;
+    background-image: linear-gradient(
+      to top,
+      var(--blanco) 0%,
+      var(--degradado) 100%
+    );
+  }
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.Item {
+    FLEX-BASIS: 100%;
+
+MARGIN-BOTTOM: 1EM;
+}
+
+@MEDIA (MIN-WIDTH: 768PX) {
+
+    .Item {
+        .ITEM {
+
+            FLEX-BASIS: 48%;
+            
+            }
+    }
+    
+    }
+
+@MEDIA (MIN-WIDTH: 1024PX) {
+
+    .Item {
+    
+        WIDTH: 33.33%;
+    
+    }
+}
