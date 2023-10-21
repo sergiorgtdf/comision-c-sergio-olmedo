@@ -1,10 +1,11 @@
 const User = require("../models/users.models");
 const controllerUsers = {};
 
-//TODO: INDEX USER
 
 
-//TODO: GETALL
+  
+
+// GET ALL
 controllerUsers.getAllUsers = async (req, res) => {
   const users = await User.findAll();
 
@@ -25,8 +26,6 @@ controllerUsers.postUser = async (req, res) => {
 
   //validacion para los datos del body
   if (!username || !email || !password) {
-
-  
     return res.status(400).send({
       message: "Por favor ingresar los datos del obligatorios del usuario",
     });

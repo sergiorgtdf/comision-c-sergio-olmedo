@@ -1,35 +1,22 @@
-<!-- Head -->
-<%- include("partials/head") %>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("partials/head"); %>
+    <title><%- title %> </title>
+</head>
 <body>
-  
-  
+    <header>
+        <%- include("partials/navBar"); %>
+    </header>
+    <main>
+        <section>
+            <div id="blog">
 
-  <header>
-    <%- include("partials/navBar") %>
-    
-    <div class="titulo">
-      <h1> Titulo </h1>
-    </div>
-
-  </header>
-
-  <main>
-
-    <div class="contenedor">
-      <div class="contenedor-card-item">
-        <div class="contenedor-card-item-wrapper">
-          <div class="contenedor-info">
-            <div class="info">
-              <p class="titulo">Usuario</p>
-              <span class="categoria">Categoría</span>
             </div>
-            <div class="fondo"></div>
-        </div>
-        </div>
-      </div>
-    </div>
-
-  </main>
-
-</body> 
+        </section>
+    </main>
+    <footer>
+        <%- include("partials/footer"); %>
+    </footer>
+</body>
+</html>

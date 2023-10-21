@@ -3,8 +3,9 @@ const { Sequelize, DataTypes } = require('sequelize');
 const {sequelize} = require("../database/db");
 
 
+
 //
-const Foro = sequelize.define('Foro', {
+const Blog = sequelize.define('Blog', {
   
   //El id lo genera automaticamente
 
@@ -43,7 +44,7 @@ const Foro = sequelize.define('Foro', {
 });
 
 // `sequelize.define` also returns the model
-console.log(Foro === sequelize.models.Foro); // true
-Foro.sync();
+console.log(Blog === sequelize.models.Blog); // true
+Blog.sync();
 
-module.exports = Foro;
+module.exports = Blog;

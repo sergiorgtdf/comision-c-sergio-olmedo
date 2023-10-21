@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%=title%></title>
     <%- include("partials/head")%>
+
+    <title><%=title%></title>
+    
   </head>
   <body>
     <%- include("partials/navBar")%>
 
-    <!--  -->
+    
 
-    <% if(foros) { %>
+    <% if(blog) { %>
 
     <div class="container mt-4">
       
@@ -19,25 +19,25 @@
           <div class="card-header"><%=title%></div>
 
           <div class="card-body">
-            <form action="/updateForo" method="post">
-              <input id="id" name="id" value="<%= foros.id %>" hidden />
+            <form action="/updateBlog" method="post">
+              <input id="id" name="id" value="<%= blog.id %>" hidden />
 
               <div class="mb-3">
-                <label for="foro" class="form-label">Titulo *</label>
+                <label for="blog" class="form-label">Titulo *</label>
                 <input
                   type="text"
                   class="form-control"
                   id="title"
                   name="title"
-                  placeholder="Titulo del Foro"
-                  value="<%= foros.title %>"
+                  placeholder="Titulo del blog"
+                  value="<%= blog.title %>"
                   tabindex="1"
                   required
                 />
               </div>
 
               <div class="mb-3">
-                <label for="foro" class="form-label">Descripción</label>
+                <label for="blog" class="form-label">Descripción</label>
 
                 <input
                   type="text"
@@ -45,25 +45,25 @@
                   id="description"
                   name="description"
                   placeholder="Breve Descripción del tema"
-                  value="<%= foros.description %>"
+                  value="<%= blog.description %>"
                   tabindex="2"
                 />
               </div>
 
               <div class="mb-3">
-                <label for="foro" class="form-label">Contenido</label>
+                <label for="blog" class="form-label">Contenido</label>
                 <textarea
                   class="form-control"
                   name="content"
                   id="mytextarea"
                   tabindex="3"
                 >
-<%= foros.content %></textarea
+<%= blog.content %></textarea
                 >
               </div>
 
               <div class="mb-3">
-                <label for="foro" class="form-label">Imagen</label>
+                <label for="blog" class="form-label">Imagen</label>
                 <input
                   type="text"
                   class="form-control"
@@ -71,7 +71,7 @@
                   name="image"
                   placeholder="URL imagén"
                   tabindex="4"
-                  value="<%= foros.image %>"
+                  value="<%= blog.image %>"
                   required
                 />
               </div>
@@ -79,14 +79,14 @@
               <button type="submit" class="btn btn-primary" tabindex="5">
                 Guardar
               </button>
-              <a href="/foro" class="btn btn-secondary" tabindex="6"
+              <a href="/blog" class="btn btn-secondary" tabindex="6"
                 >Cancelar</a
               >
             </form>
           </div>
         
           <div class="imagen">
-            <img src="<%=foros.image%>" alt="" />
+            <img src="<%=blog.image%>" alt="" />
           </div>
         </div>
         

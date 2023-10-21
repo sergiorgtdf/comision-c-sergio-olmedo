@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= title %></title>
   <%- include("partials/head")%>
+  <title><%= title %></title>
+ 
 </head>
 <body>
   <%- include("partials/navBar")%>
@@ -13,26 +12,26 @@
     <div class="card border-secondary">
       <div class="card-header"><%= title %></div>
       <div class="card-body">
-        <form action="/saveForo" method="post">
-          <!-- <form action="" method="post"></form> -->
+        <form action="/saveBlog" method="post">
+          
           <div class="datos">
 
 
             <div class="mb-3">
-              <label for="foro" class="form-label">Titulo *</label>
+              <label for="blog" class="form-label">Titulo *</label>
               <input
                 type="text"
                 class="form-control"
                 id="title" 
                 name="title"
-                placeholder="Titulo del Foro"
+                placeholder="Titulo del blog"
                 tabindex="1"
                 required
               />
             </div>
 
             <div class="mb-3">
-              <label for="foro" class="form-label">Descripción</label>
+              <label for="blog" class="form-label">Descripción</label>
 
               <input
                 type="text"
@@ -45,7 +44,7 @@
             </div>
 
             <!-- <div class="mb-3">
-              <label for="foro" class="form-label">Contenido</label>
+              <label for="blog" class="form-label">Contenido</label>
               <textarea 
               class="form-control" 
               name="content" 
@@ -54,7 +53,7 @@
             </div> -->
 
             <div class="mb-3">
-              <label for="foro" class="form-label">Contenido</label>
+              <label for="blog" class="form-label">Contenido</label>
 
 
               <!-- <div id="editor" name="content" >               
@@ -65,7 +64,7 @@
             </div>
 
             <div class="mb-3">
-              <label for="foro" class="form-label">Imagen</label>
+              <label for="blog" class="form-label">Imagen</label>
               <input
                 type="text"
                 class="form-control"
@@ -83,7 +82,7 @@
           <button type="submit"  class="btn btn-primary" tabindex="5">
             Guardar
           </button>
-          <a href="/foro" class="btn btn-secondary" tabindex="6">Cancelar</a>
+          <a href="/blog" class="btn btn-secondary" tabindex="6">Cancelar</a>
 
         </form>
       </div>
@@ -95,5 +94,4 @@
 
 </body>
 </html>
-
 

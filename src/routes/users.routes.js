@@ -9,7 +9,7 @@ const User = require("../models/users.models");
 userRoutes.get("/user", controllerUsers.getAllUsers);
 
 //ruta GET USER BY ID
-// userRoutes.get("/user/:id", controllerUsers.getUserById);
+//  userRoutes.get("/user/:id", controllerUsers.getUserById);
 
 //ruta POST (crear usuario)
 userRoutes.get("/createUser", controllerUsers.formCreateUser);

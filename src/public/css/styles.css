@@ -1,64 +1,36 @@
 :root{
-  --fondo:  rgb(122, 120, 120);
- 
+  --blanco:  rgb(255,255,255);
+  --oscuro: rgb(0,0,0);
+  --degradado:  rgb(172,172,172);
+  --colorNav: #4f709c;
+  --colorNavHover: #4f709c;
   --fuentePrimaria: 'Roboto Mono', monospace, sans-serif;
- 
+  --colorIcono: rgb(135, 153, 71);
+  
 
 }
 
 body {
-
+  background-color: var(--degradado);
+  margin: 0;
   font-family: var(--fuentePrimaria);
-
+  
 }
 
-.card {
-  flex: auto;
-  align-content: center;
-}
-
-.container-menu
-
-.container {
-  height: 780px;
-  background-color: ;
-}
-.container-menu  {
-  
-  height: 780px;
-  
-  
-  background-color: var(--fondo);
+.contenedor{
   display: flex;
-  justify-content: center;
-
-   gap: 20px;  
-  
-}
-.imagen {
-justify-content: center;
-display: flex;
+  background-color: #fff;
+  margin: 50px;
+  height: 90px; 
+  width: 190%;
 
 }
 
-
-
-.imagenUsuario {
-  justify-content: center;
+#blog {
   display: flex;
-  background-color: var(--fondo);
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  margin: auto;
 }
-
-.titulo {
-  background-color: var(--fondo);
-  height: 80px;
-  /* background-color: rgb(121, 115, 115); */
-  text-align: center;
-  
-  font-size: 40px;
-  border-radius: 7px;
-}
-
-
-
 
