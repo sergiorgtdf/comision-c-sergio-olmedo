@@ -45,7 +45,7 @@ controllerBlogs.postRegister = async (req, res) => {
     }
   } catch (error) {
     console.error(error);
-    res.status(500).send(erro);
+    res.status(500).send(error);
   }
 };
 
@@ -66,7 +66,7 @@ controllerBlogs.putRegister = async (req, res) => {
   //validacion para los datos del body
   if (!title || !description || !content) {
     return res.status(400).send({
-      message: "Debe completar con los campos obligatorios",
+      message: "Debe completar con los campos obligatorios",  valid: false 
     });
   }
 

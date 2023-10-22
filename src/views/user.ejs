@@ -11,21 +11,24 @@
     <%- include("partials/navBar") %>
 
     <div class="container">
-      
       <!-- BOTONES NUEVO - INICIO -->
       <a href="/createUser" class="btn btn-outline-primary mt-4">
-        <i class='bx bx-plus'></i>
+        <i class="fa-solid fa-plus fa-2xl"></i>
       </a>
 
       <a href="/" class="btn btn-outline-success mt-4">
-        <i class='bx bx-home-alt-2'></i>
+        <i class="fa-solid fa-house fa-2xl"></i>
       </a>
 
       <div class="titulo">Listado de <%= title %></div>
-      
-      <table id="tableUser" class="table table-responsive table-hover table-sm" style="width: 90%" >
+
+      <table
+        id="tableUser"
+        class="table table-responsive table-hover table-sm"
+        style="width: 90%"
+      >
         <!-- class="table table-striped " style="width: 90%" -->
-       
+
         <!-- CABECERAS -->
         <thead>
           <tr>
@@ -51,16 +54,23 @@
             <td><%= (users.role===1)? "Administrador":"Usuario" %></td>
             <td>
               <div class="card" style="width: 4rem">
-                <img src=" <%= users.image %>" class="card-img-top "
-                alt="Imagen del Usuario">
+                <img
+                  src=" <%= users.image %>"
+                  class="card-img-top"
+                  alt="Imagen del Usuario"
+                />
               </div>
             </td>
 
             <td>
-              <a href="/editUser/<%= users.id %>" class="btn btn-success"> <i class='bx bx-edit-alt' ></i> </i></a>
+              <a href="/editUser/<%= users.id %>" class="btn btn-success">
+                <i class="fa-solid fa-pen"></i>
+              </a>
 
-              <a href="/deleteUser/<%= users.id %>" class="btn btn-danger"><i class="bx bx-trash"></i></a>
-
+              <!-- <a href="/deleteUser/<%= users.id %>" class="btn btn-danger" onclick="return confirm(`Estas seguro de eliminar?`)"><i class="fa-regular fa-trash-can"></i></a> -->
+              <a class="btn btn-danger" onclick="confirmar(<%= users.id %>)"
+                ><i class="fa-regular fa-trash-can"></i
+              ></a>
             </td>
           </tr>
 
@@ -69,7 +79,25 @@
       </table>
     </div>
 
+    <script>
+      new DataTable("#tableUser");
+
+      function confirmar(id) {
+        Swal.fire({
+          title: "¿Esta seguro de eliminar el registro?",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: `#3085d6`,
+          cancelButtonColor: `#d33`,
+          confirmButtonText: "Confirmar",
+          cancelButtonText: "Cancelar",
+        }).then((result) => {
+          if (result.isConfirmed) {
+            window.location = `/deleteUser/` + id;
+          }
+        });
+      }
+    </script>
     <%- include("partials/footer") %>
   </body>
 </html>
-

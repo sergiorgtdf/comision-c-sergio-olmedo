@@ -1,7 +1,7 @@
 :root{
   --blanco:  rgb(255,255,255);
   --oscuro: rgb(0,0,0);
-  --degradado:  rgb(172,172,172);
+  --degradado:  rgba(147,206,222,1);
   --colorNav: #4f709c;
   --colorNavHover: #4f709c;
   --fuentePrimaria: 'Roboto Mono', monospace, sans-serif;

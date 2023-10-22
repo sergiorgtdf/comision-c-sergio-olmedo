@@ -11,11 +11,13 @@
     <!-- BOTONES NUEVO - INICIO -->
     <div class="botonera">
       <a href="/createBlog" class="btn btn-outline-primary mt-4">
-        <i class="bx bx-plus"></i>
+        <!-- <i class="bx bx-plus"></i> -->
+        <i class="fa-solid fa-plus fa-2xl"></i>
       </a>
 
       <a href="/" class="btn btn-outline-success mt-4">
-        <i class="bx bx-home-alt-2"></i>
+        <i class="fa-solid fa-house fa-2xl"></i>
+        <!-- <i class="bx bx-home-alt-2"></i> -->
       </a>
     </div>
     <!-- BOTONES NUEVO - fin -->
@@ -35,13 +37,16 @@
           />
           <h3><%= blogs.title %></h3>
           <p><%= blogs.description %></p>
+          <p>Visitas: <%= blogs.visits %></p>
           <a href="/editBlog/<%= blogs.id %>">Leer</a>
+          
         </div>
 
         <% }) %>
       </div>
     </section>
-
+    
+    
     <%- include("partials/footer") %>
   </body>
 </html>

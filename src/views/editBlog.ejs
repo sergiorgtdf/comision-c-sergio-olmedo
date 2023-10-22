@@ -2,100 +2,106 @@
 <html lang="en">
   <head>
     <%- include("partials/head")%>
-
-    <title><%=title%></title>
     
+    <title><%=title%></title>
   </head>
   <body>
-    <%- include("partials/navBar")%>
-
-    
-
-    <% if(blog) { %>
+    <%- include("partials/navBar")%> <% if(blog) { %>
 
     <div class="container mt-4">
-      
-        <div class="card border-secondary">
-          <div class="card-header"><%=title%></div>
+      <div class="card border-secondary">
+        <div class="card-header"><%=title%></div>
 
-          <div class="card-body">
-            <form action="/updateBlog" method="post">
-              <input id="id" name="id" value="<%= blog.id %>" hidden />
+        <div class="card-body">
+          <form
+            method="post"
+            action="/updateBlog"
+            onsubmit="return submitForm(tihis)"
+          >
+            <input id="id" name="id" value="<%= blog.id %>" hidden />
 
-              <div class="mb-3">
-                <label for="blog" class="form-label">Titulo *</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="title"
-                  name="title"
-                  placeholder="Titulo del blog"
-                  value="<%= blog.title %>"
-                  tabindex="1"
-                  required
-                />
-              </div>
+            <div class="mb-3">
+              <label for="blog" class="form-label">Titulo *</label>
+              <input
+                type="text"
+                class="form-control"
+                id="title"
+                name="title"
+                placeholder="Titulo del blog"
+                value="<%= blog.title %>"
+                tabindex="1"
+                required
+              />
+            </div>
 
-              <div class="mb-3">
-                <label for="blog" class="form-label">Descripción</label>
+            <div class="mb-3">
+              <label for="blog" class="form-label">Descripción</label>
 
-                <input
-                  type="text"
-                  class="form-control"
-                  id="description"
-                  name="description"
-                  placeholder="Breve Descripción del tema"
-                  value="<%= blog.description %>"
-                  tabindex="2"
-                />
-              </div>
+              <input
+                type="text"
+                class="form-control"
+                id="description"
+                name="description"
+                placeholder="Breve Descripción del tema"
+                value="<%= blog.description %>"
+                tabindex="2"
+              />
+            </div>
 
-              <div class="mb-3">
-                <label for="blog" class="form-label">Contenido</label>
-                <textarea
-                  class="form-control"
-                  name="content"
-                  id="mytextarea"
-                  tabindex="3"
-                >
-<%= blog.content %></textarea
-                >
-              </div>
-
-              <div class="mb-3">
-                <label for="blog" class="form-label">Imagen</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="image"
-                  name="image"
-                  placeholder="URL imagén"
-                  tabindex="4"
-                  value="<%= blog.image %>"
-                  
-                />
-              </div>
-
-              <button type="submit" class="btn btn-primary" tabindex="5">
-                Guardar
-              </button>
-              <a href="/blog" class="btn btn-secondary" tabindex="6"
-                >Cancelar</a
+            <div class="mb-3">
+              <label for="blog" class="form-label">Contenido</label>
+              <textarea
+                class="form-control"
+                name="content"
+                id="mytextarea"
+                tabindex="3"
               >
-            </form>
-          </div>
+                  <%= blog.content %>
+                </textarea
+              >
+            </div>
+
+            <script>
+              ClassicEditor.create(document.querySelector("#editor")).catch(
+                (error) => {
+                  console.error(error);
+                }
+              );
+            </script>
+
+            <div class="mb-3">
+              <label for="blog" class="form-label">Imagen</label>
+              <input
+                type="text"
+                class="form-control"
+                id="image"
+                name="image"
+                placeholder="URL imagén"
+                tabindex="4"
+                value="<%= blog.image %>"
+              />
+            </div>
+
+            <button type="submit" class="btn btn-primary" tabindex="5">
+              Guardar
+            </button>
+            <a href="/blog" class="btn btn-secondary" tabindex="6">Cancelar</a>
+          </form>
         
-          <div class="imagen">
-            <img src="<%=blog.image%>" alt="" />
-          </div>
         </div>
-        
-      
-      
-      
+
+        <div class="imagen">
+          <img src="<%=blog.image%>" alt="" />
+        </div>
+      </div>
+
+
 
       <% } %>
     </div>
+    
     <%- include("partials/footer")%>
+
   </body>
 </html>
+
