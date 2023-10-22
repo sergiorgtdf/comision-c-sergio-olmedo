@@ -17,6 +17,7 @@ controllerBlogs.formCreateBlog = (req, res) => {
 controllerBlogs.postRegister = async (req, res) => {
   const { author, title, description, content, image } = req.body;
 
+
   //Validacion
   if (!title || !description || !content) {
     return res.status(400).send({
